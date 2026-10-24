@@ -1,0 +1,22 @@
+# 依赖与中间产物（不部署到 GitHub Pages）
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+.pnpm-store/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志与临时文件
+*.log
+*.tmp
+_*
+!._gitignore
+!.gitkeep
+
+# 备份数据（含个人学习记录，不要公开）
+*.backup.json
