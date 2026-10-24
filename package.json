@@ -1,0 +1,24 @@
+{
+  "name": "zsb-review-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "专升本复习 PWA 的本地服务器、数据生成与测试脚本",
+  "scripts": {
+    "data": "node build/parse.js ..",
+    "test": "node build/test.js && node build/ghpages-check.js && node build/http-test.js && node build/file-test.js",
+    "test:unit": "node build/test.js",
+    "test:file": "node build/file-test.js",
+    "test:e2e": "node build/e2e.js",
+    "test:mobile": "node build/edge-open-answer-test.js",
+    "test:final": "node build/final-check.js",
+    "test:http": "node build/http-test.js",
+    "check:pages": "node build/ghpages-check.js",
+    "serve": "node build/serve.js 8899 site 0.0.0.0"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

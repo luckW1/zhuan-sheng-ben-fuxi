@@ -1,0 +1,11 @@
+# 依赖与缓存
+node_modules/
+.npm/
+npm-debug.log*
+*.log
+
+# 双击离线版（约 9 MB，由 node build/parse.js 生成，不入库）
+专升本复习-离线版.html
+
+# 旧 gh-pages 仓库的本地备份（重组 main 分支时保留，确认无误后可删除）
+site/.git.bak/
