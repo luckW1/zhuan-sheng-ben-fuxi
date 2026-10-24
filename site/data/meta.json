@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-10-24T03:34:13.064Z",
+  "subjects": [
+    {
+      "id": "java",
+      "name": "程序设计基础"
+    },
+    {
+      "id": "db",
+      "name": "数据库原理与应用"
+    }
+  ],
+  "stats": {
+    "books": 20,
+    "quiz": 414,
+    "cards": 857,
+    "chars": 732840
+  }
+}
