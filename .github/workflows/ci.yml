@@ -14,6 +14,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      # 双击离线版不入库，用仓库内的 site/ 数据现生成，供 file-test 检查
+      - run: node build/build-standalone.js
       - run: npm run check:pages
       - run: npm run test:unit
       - run: npm run test:http
