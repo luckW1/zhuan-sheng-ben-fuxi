@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T03:34:13.064Z",
+  "generatedAt": "2026-10-26T03:24:39.816Z",
   "subjects": [
     {
       "id": "java",
@@ -11,9 +11,9 @@
     }
   ],
   "stats": {
-    "books": 20,
+    "books": 21,
     "quiz": 414,
     "cards": 857,
-    "chars": 732840
+    "chars": 735286
   }
 }

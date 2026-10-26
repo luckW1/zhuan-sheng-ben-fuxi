@@ -149,7 +149,7 @@ function StoreSetter(win, key, val) {
   await new Promise(r => setTimeout(r, 120));
   ok('切换到阅读页显示搜索框', !!view.querySelector('#read-search'));
   const bookRows = view.querySelectorAll('[data-book]');
-  ok('书籍列表已渲染（20 本）', bookRows.length === 20, bookRows.length + ' 本');
+  ok('书籍列表已渲染（21 本）', bookRows.length === 21, bookRows.length + ' 本');
   const subjTitles = Array.from(view.querySelectorAll('.sec-title')).map(e => e.textContent.trim());
   console.log('    分组:', subjTitles.filter(t => t.includes('Java') || t.includes('数据库')).join(' / '));
 

@@ -70,7 +70,7 @@ if (!win.Element.prototype.scrollIntoView) win.Element.prototype.scrollIntoView 
   console.log('\n--- 阅读 ---');
   doc.querySelectorAll('.tab')[1].dispatchEvent(new win.Event('click', { bubbles: true }));
   await new Promise(r => setTimeout(r, 200));
-  ok('书籍列表 20 本', view.querySelectorAll('[data-book]').length === 20);
+  ok('书籍列表 21 本', view.querySelectorAll('[data-book]').length === 21);
   view.querySelectorAll('[data-book]')[2].dispatchEvent(new win.Event('click', { bubbles: true }));
   await new Promise(r => setTimeout(r, 200));
   view.querySelectorAll('[data-ch]')[0].dispatchEvent(new win.Event('click', { bubbles: true }));

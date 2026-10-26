@@ -54,11 +54,11 @@ doc.dispatchEvent(new win.Event('DOMContentLoaded', { bubbles: true }));
   const view = doc.getElementById('view');
   const tabs = doc.querySelectorAll('.tab');
 
-  console.log('=== 打开「总目录」（含 20 个 .md 链接的资料） ===');
+  console.log('=== 打开「总目录」（含 21 本书籍的资料） ===');
   tabs[1].dispatchEvent(new win.Event('click', { bubbles: true }));
   await new Promise(r => setTimeout(r, 200));
   const books = view.querySelectorAll('[data-book]');
-  ok('书籍列表渲染', books.length === 20, books.length + ' 本');
+  ok('书籍列表渲染', books.length === 21, books.length + ' 本');
 
   // 打开 Java 总目录（第一本，order=0）
   books[0].dispatchEvent(new win.Event('click', { bubbles: true }));
@@ -116,7 +116,7 @@ doc.dispatchEvent(new win.Event('DOMContentLoaded', { bubbles: true }));
   tabs[1].dispatchEvent(new win.Event('click', { bubbles: true }));
   await new Promise(r => setTimeout(r, 250));
   const books2 = view.querySelectorAll('[data-book]');
-  ok('返回书籍列表', books2.length === 20, books2.length + ' 本');
+  ok('返回书籍列表', books2.length === 21, books2.length + ' 本');
 
   // 数据库总目录
   const allBooks = JSON.parse(fs.readFileSync(path.join(SITE, 'data/books.json'), 'utf8'));

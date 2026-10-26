@@ -30,7 +30,8 @@ const books = JSON.parse(fs.readFileSync(path.join(SITE, 'data/books.json'), 'ut
 const quiz = JSON.parse(fs.readFileSync(path.join(SITE, 'data/quiz.json'), 'utf8'));
 const cards = JSON.parse(fs.readFileSync(path.join(SITE, 'data/cards.json'), 'utf8'));
 ok('meta.stats 存在', !!meta.stats);
-ok('books 数量 = 20', books.length === 20, '实际 ' + books.length);
+ok('books 数量 = 21', books.length === 21, '实际 ' + books.length);
+ok('新增重点知识点速记', books.some(b => b.id === 'java-11' && b.title === '11-重点知识点速记'));
 ok('quiz 数量 > 400', quiz.length > 400, '实际 ' + quiz.length);
 ok('cards 数量 > 800', cards.length > 800, '实际 ' + cards.length);
 ok('每本书有 chapterTitles', books.every(b => Array.isArray(b.chapterTitles) && b.chapterTitles.length > 0));

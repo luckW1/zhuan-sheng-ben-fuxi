@@ -43,7 +43,7 @@ try {
 ok('内嵌数据是可解析的 JSON', !!data);
 
 ok('核心数据数量正确',
-  !!data && data.books.length === 20 && data.quiz.length === 414 && data.cards.length === 857,
+  !!data && data.books.length === 21 && data.quiz.length === 414 && data.cards.length === 857,
   data ? `实际 ${data.books.length}/${data.quiz.length}/${data.cards.length}` : '');
 ok('全部正文分片已内嵌',
   !!data && data.books.every(book =>

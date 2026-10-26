@@ -244,7 +244,7 @@
         </div>
 
         <div class="entry-grid">
-          <button class="entry" data-act="read"><span class="ei">▤</span><span class="et">阅读资料</span><span class="ed">20 份 md 资料，${(S.meta.stats.chars / 10000).toFixed(1)} 万字</span></button>
+          <button class="entry" data-act="read"><span class="ei">▤</span><span class="et">阅读资料</span><span class="ed">${S.books.length} 份 md 资料，${(S.meta.stats.chars / 10000).toFixed(1)} 万字</span></button>
           <button class="entry" data-act="quiz"><span class="ei">✎</span><span class="et">开始刷题</span><span class="ed">${S.quiz.length} 道题，自动判分</span></button>
           <button class="entry" data-act="card"><span class="ei">⚑</span><span class="et">背卡片</span><span class="ed">${S.cards.length} 条清单，遗忘曲线</span></button>
           <button class="entry" data-act="wrong"><span class="ei">✗</span><span class="et">错题本</span><span class="ed">${wrongN} 道待巩固</span></button>

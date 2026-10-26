@@ -1,21 +1,21 @@
 /* Service Worker —— 离线缓存，保证断网也能复习
  * 版本号说明：每次修改 index.html / css / js 后，必须把 CACHE 版本号 +1，
  * 否则用户手机可能仍读到旧的缓存版本。
- * 当前版本：v10（网络优先更新，避免在线用户长期读取旧缓存）
+ * 当前版本：v11（网络优先更新，避免在线用户长期读取旧缓存）
  */
-const CACHE = 'zsb-review-v10';
+const CACHE = 'zsb-review-v11';
 const CACHE_PREFIX = 'zsb-review-';
 const CORE = [
   './',
   './index.html',
   './manifest.json',
-  './css/app.css?v=10',
-  './css/hljs-light.css?v=10',
-  './css/hljs-dark.css?v=10',
-  './js/vendor/marked.js?v=10',
-  './js/vendor/highlight.min.js?v=10',
-  './js/store.js?v=10',
-  './js/app.js?v=10',
+  './css/app.css?v=11',
+  './css/hljs-light.css?v=11',
+  './css/hljs-dark.css?v=11',
+  './js/vendor/marked.js?v=11',
+  './js/vendor/highlight.min.js?v=11',
+  './js/store.js?v=11',
+  './js/app.js?v=11',
   './data/meta.json',
   './data/books.json',
   './data/quiz.json',

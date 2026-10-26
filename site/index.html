@@ -14,9 +14,9 @@
 <link rel="icon" href="./icons/favicon.ico" sizes="48x48">
 <link rel="icon" href="./icons/favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-<link rel="stylesheet" href="./css/app.css?v=10">
-<link rel="stylesheet" href="./css/hljs-light.css?v=10" id="hljs-light">
-<link rel="stylesheet" href="./css/hljs-dark.css?v=10" id="hljs-dark" disabled>
+<link rel="stylesheet" href="./css/app.css?v=11">
+<link rel="stylesheet" href="./css/hljs-light.css?v=11" id="hljs-light">
+<link rel="stylesheet" href="./css/hljs-dark.css?v=11" id="hljs-dark" disabled>
 </head>
 <body>
 
@@ -49,10 +49,10 @@
 <!-- 轻提示 -->
 <div id="toast" class="hidden" role="status" aria-live="polite"></div>
 
-<script src="./js/vendor/marked.js?v=10"></script>
-<script src="./js/vendor/highlight.min.js?v=10"></script>
-<script src="./js/store.js?v=10"></script>
-<script src="./js/app.js?v=10"></script>
+<script src="./js/vendor/marked.js?v=11"></script>
+<script src="./js/vendor/highlight.min.js?v=11"></script>
+<script src="./js/store.js?v=11"></script>
+<script src="./js/app.js?v=11"></script>
 <script>
 if ('serviceWorker' in navigator) {
   var refreshing = false;
@@ -69,7 +69,7 @@ if ('serviceWorker' in navigator) {
   });
   window.addEventListener('load', function () {
     // 用 document.baseURI 解析，确保子路径部署时也能注册成功
-    var swUrl = new URL('./sw.js?v=10', document.baseURI).href;
+    var swUrl = new URL('./sw.js?v=11', document.baseURI).href;
     navigator.serviceWorker.register(swUrl, {
       scope: './',
       updateViaCache: 'none'
