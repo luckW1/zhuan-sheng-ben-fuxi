@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e40af">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="app-version" content="v10">
+<meta name="description" content="软件工程专业专升本转段考核复习工具：资料阅读、刷题练习、背诵卡片与错题统计，可安装到手机桌面离线使用。">
+<title>专升本复习</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/favicon.ico" sizes="48x48">
+<link rel="icon" href="./icons/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./css/app.css?v=11">
+<link rel="stylesheet" href="./css/hljs-light.css?v=11" id="hljs-light">
+<link rel="stylesheet" href="./css/hljs-dark.css?v=11" id="hljs-dark" disabled>
+</head>
+<body>
+
+<!-- 启动画面 -->
+<div id="splash">
+  <div class="splash-logo">专</div>
+  <div class="splash-title">专升本复习</div>
+  <div class="splash-sub">正在载入资料…</div>
+</div>
+
+<!-- 顶栏 -->
+<header id="topbar">
+  <button id="btn-back" class="icon-btn hidden" aria-label="返回">‹</button>
+  <h1 id="page-title">专升本复习</h1>
+  <button id="btn-theme" class="icon-btn" aria-label="切换主题">◐</button>
+</header>
+
+<!-- 主内容区 -->
+<main id="view"></main>
+
+<!-- 底部导航 -->
+<nav id="tabbar">
+  <button class="tab active" data-tab="home"><span class="ti">⌂</span><span>首页</span></button>
+  <button class="tab" data-tab="read"><span class="ti">▤</span><span>阅读</span></button>
+  <button class="tab" data-tab="quiz"><span class="ti">✎</span><span>刷题</span></button>
+  <button class="tab" data-tab="card"><span class="ti">⚑</span><span>背诵</span></button>
+  <button class="tab" data-tab="me"><span class="ti">◔</span><span>我的</span></button>
+</nav>
+
+<!-- 轻提示 -->
+<div id="toast" class="hidden" role="status" aria-live="polite"></div>
+
+<script src="./js/vendor/marked.js?v=11"></script>
+<script src="./js/vendor/highlight.min.js?v=11"></script>
+<script src="./js/store.js?v=11"></script>
+<script src="./js/app.js?v=11"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  var refreshing = false;
+  var swReloadKey = 'zsb-sw-bootstrap-v10';
+  if (navigator.serviceWorker.controller) {
+    try { sessionStorage.removeItem(swReloadKey); } catch (e) {}
+  }
+  // 新 Service Worker 接管时自动刷新一次，确保用户看到最新版本
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (refreshing) return;
+    refreshing = true;
+    try { sessionStorage.removeItem(swReloadKey); } catch (e) {}
+    window.location.reload();
+  });
+  window.addEventListener('load', function () {
+    // 用 document.baseURI 解析，确保子路径部署时也能注册成功
+    var swUrl = new URL('./sw.js?v=11', document.baseURI).href;
+    navigator.serviceWorker.register(swUrl, {
+      scope: './',
+      updateViaCache: 'none'
+    }).then(function (registration) {
+      registration.update().catch(function () {});
+      navigator.serviceWorker.ready.then(function () {
+        if (navigator.serviceWorker.controller) return;
+        try {
+          if (sessionStorage.getItem(swReloadKey)) return;
+          sessionStorage.setItem(swReloadKey, '1');
+        } catch (e) {}
+        setTimeout(function () {
+          if (navigator.serviceWorker.controller || refreshing) return;
+          refreshing = true;
+          window.location.reload();
+        }, 300);
+      }).catch(function () {});
+      window.addEventListener('online', function () {
+        registration.update().catch(function () {});
+      });
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') {
+          registration.update().catch(function () {});
+        }
+      });
+    }).catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
